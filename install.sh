@@ -10,9 +10,9 @@ if [ "$(id -u)" != "0" ]; then
     exit 1
 fi
 
-echo "Installing Dependencies"
-apt-get update
-apt-get install -y $DEPS
+# echo "Installing Dependencies"
+# apt-get update
+# apt-get install -y $DEPS
 
 echo "Installing luma.oled library"
 pip3 install --upgrade luma.oled

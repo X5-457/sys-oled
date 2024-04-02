@@ -85,6 +85,13 @@ def mem_usage():
     return "mem: %s / %s - %.0f%%" \
         % (bytes2human(usage.used), bytes2human(usage.total), usage.percent)
 
+def sys_usage():
+    load = psutil.cpu_percent(interval=None)
+    temp = psutil.sensors_temperatures()['f10e4078.thermal']
+    usage = psutil.virtual_memory()
+    return "CU: %s%% T: %sC Mem %.0f%%" \
+        % (str(load).split('.')[0], str(temp[0].current).split('.')[0], usage.percent)
+
 def disk_usage(name, dir):
     usage = psutil.disk_usage(dir)
     return name + ": %s / %s - %.0f%%" \
@@ -102,7 +109,7 @@ def host_time():
 
 def display_info(device):
     with canvas(device) as draw:
-    	draw.text((0, 0), cpu_usage(), font=font, fill="white")
+    	draw.text((0, 0), sys_usage(), font=font, fill="white")
     	draw.line((0,13)+(128,13), fill="white")
     	draw.text((0, 15), mem_usage(), font=font, fill="white")
     	draw.text((0, 27), disk_usage(s1_name, s1_path), font=font, fill="white")

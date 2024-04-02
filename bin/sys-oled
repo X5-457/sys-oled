@@ -111,7 +111,7 @@ def display_info(device):
     with canvas(device) as draw:
     	draw.text((0, 0), sys_usage(), font=font, fill="white")
     	draw.line((0,13)+(128,13), fill="white")
-    	draw.text((0, 15), mem_usage(), font=font, fill="white")
+#    	draw.text((0, 15), mem_usage(), font=font, fill="white")
     	draw.text((0, 27), disk_usage(s1_name, s1_path), font=font, fill="white")
     	if 's2_name' in globals():
         	draw.text((0, 39), disk_usage(s2_name, s2_path), font=font, fill="white")

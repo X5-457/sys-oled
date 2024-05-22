@@ -31,9 +31,15 @@ if os.path.isfile(config_file):
     net_name = config.get('device', 'network_name')
     s1_name = config.get('device', 'storage1_name')
     s1_path = config.get('device', 'storage1_path')
-    if config.has_option('device', 'storage2_name'):
-        s2_name = config.get('device', 'storage2_name')
-        s2_path = config.get('device', 'storage2_path')
+    s2_name = config.get('device', 'storage2_name')
+    s2_path = config.get('device', 'storage2_path')
+    s3_name = config.get('device', 'storage3_name')
+    s3_path = config.get('device', 'storage3_path')
+    s4_name = config.get('device', 'storage4_name')
+    s4_path = config.get('device', 'storage4_path')
+#    if config.has_option('device', 'storage2_name'):
+#        s2_name = config.get('device', 'storage2_name')
+#        s2_path = config.get('device', 'storage2_path')
 
 
 # Load font

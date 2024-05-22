@@ -147,7 +147,7 @@ def main():
         time.sleep(refresh)
         if show_logo == "yes":
             logo(device, host_time())
-            time.sleep(refresh / 2)
+            time.sleep(refresh / 4)
 
 if __name__ == "__main__":
     try:
